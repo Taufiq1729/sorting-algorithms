@@ -1,15 +1,13 @@
 #include <iostream>
-#include <vector>
 using namespace std;
 
-vector<int> bubble_Sort(vector<int> v) {
-    
-    for (int i = 0; i < v.size(); i++) {
-        int swapped = true;
-        for (int j = 0; j < v.size() - 1 - i; j++) {
+int* bubble_Sort(int v[],int vsize) {
+    for (int i = 0; i < vsize; i++) {
+        int swapped = 1;
+        for (int j = 0; j < vsize - 1 - i; j++) {
             if (v[j] > v[j + 1]) {
                 swap(v[j], v[j + 1]);
-                swapped = true;
+                swapped = 1;
             }
             if (!swapped)
                 break;
@@ -18,9 +16,9 @@ vector<int> bubble_Sort(vector<int> v) {
     return v;
 }
 int main() {
-    vector <int> v={1,4,2,7,8,21,2};
-    vector<int> a=bubble_Sort(v);
-    for(int i=0;i<v.size();i++) {
+    int v[]={1,4,2,7,8,21,2};
+    int *a=bubble_Sort(v,7);
+    for(int i=0;i<7;i++) {
         cout << a[i] <<" ";
     }
 }
